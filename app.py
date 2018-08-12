@@ -12,6 +12,14 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
+@app.route('/signup')
+def signup():
+	return "This is the sign-up page"
+
+@app.route('/login')
+def login():
+	return "This is the login page"
+
 # Running the Flask app
 if __name__ == "__main__":
     app.run(debug=True)

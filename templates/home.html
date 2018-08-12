@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>My Final Project</title>
+        <title>BetterWays</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
-        <h1>My Final Project by Dr. Subhi Beidas</h1>
+        <div id="topbar_all">
+            <img src="{{ url_for('static', filename='betterways.png') }}" id="logo">
+            <div id= "links_topbar">
+                <a href="" class="topbar">About</a>
+                <a href="" class="topbar">Your Neighborhood</a>
+                <a href="" class="topbar">Sign Up</a>
+                <a href="" class="topbar">Login</a>
+                <a href="" class="topbar">Home</a>
+            </div>
+        </div>
     </body>
 </html>

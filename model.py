@@ -6,13 +6,21 @@ from sqlalchemy import create_engine
 Base = declarative_base()
 
 # Place your database schema code here
-
-# Example code:
-class Student(Base):
-    __tablename__ = "students"
-    id = Column(Integer, primary_key = True)
-    name = Column(String)
-    year = Column(Integer)
+class User(Base):
+    __tablename__="User"
+    id=Column(Integer, primary_key = True)
+    user_name=Column(String)
+    password=Column(Integer)
 
     def __repr__(self):
-        return ("Student name: {}, Student year:{}".format(self.name, self.year))
+        return("user name: {},password:{}".format(self.user_name,self.password))
+
+# Example code:
+# class Student(Base):
+   # __tablename__ = "students"
+    #id = Column(Integer, primary_key = True)
+    #name = Column(String)
+    #year = Column(Integer)
+
+    #def __repr__(self):
+        #return ("Student name: {}, Student year:{}".format(self.name, self.year))

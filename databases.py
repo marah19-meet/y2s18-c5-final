@@ -1,6 +1,6 @@
 # Database related imports
 # Make sure to import your tables!
-from model import Base, User
+from model import Base, User,Content
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -13,7 +13,7 @@ session = DBSession()
 
 # Your database functions are located under here (querying, adding items, etc.)
 def add_user(user_name,password):
-    print("you are singed up")
+    print("you are signed up")
     user= User(user_name=user_name,password=password)
     session.add(user)
     session.commit()
@@ -22,21 +22,26 @@ def get_all_users():
     users=session.query(User).all()
     return users
 
-# Example of adding a student:
-def query_by_name(their_name,their_password):
+# Example of addting a student:
+def login(their_name,their_password):
     user = session.query(
        User).filter_by(user_name=their_name).first()
     print(user.password)
     print(user.password==their_password)
     if user!=None and str(user.password)==their_password:
         print("True")
-        return True
+        return user
     else:
         print("False")
         return False
 ##/////////////////////////////////
-def add_content():
+def add_content(title,op,time_of_upload,text,image):
+    content=Content(title=title,op=op,time_of_upload=time_of_upload,text=text,image=image)
+    session.add(content)
+    session.commit()
+def query_all():
 
+pass
 
         
         

@@ -9,9 +9,6 @@ from model import User, Content
 app = Flask(__name__)
 
 
-
-
-
 # App routing code here
 @app.route('/')
 def home():

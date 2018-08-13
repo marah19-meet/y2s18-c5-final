@@ -4,9 +4,14 @@ from flask import Flask, render_template, url_for, redirect, request, session
 # Add functions you need from databases.py to the next line!
 from databases import *
 
-from model import User
+from model import User, Content
 # Starting the flask 
 app = Flask(__name__)
+
+
+#Session here
+Session['username']=user_name
+
 
 # App routing code here
 @app.route('/')

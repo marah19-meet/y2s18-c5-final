@@ -44,7 +44,10 @@ def query_all():
     news=session.query(Content).all()
     return news
 
-        
-        
+def delete_content(id):
+    session.query(Content).filter_by(
+        id=id).delete
+
+
 
 

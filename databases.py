@@ -46,8 +46,12 @@ def query_all():
 
 def delete_content(id):
     session.query(Content).filter_by(
-        id=id).delete
+        id=id).delete()
+    session.commit()
+        
 
 
+        
+        
 
 

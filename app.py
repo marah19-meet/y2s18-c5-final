@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 
 #Session here
-Session['username']=user_name
+#Session['username']=user_name
 
 
 # App routing code here

@@ -2,7 +2,7 @@
 from flask import Flask, render_template, url_for, redirect, request, session
 
 # Add functions you need from databases.py to the next line!
-from databases import *
+from databases import add_user, get_all_users, login, add_content, query_all
 
 from model import User, Content
 # Starting the flask 

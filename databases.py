@@ -30,6 +30,9 @@ def query_by_name(their_name,their_password):
          return True
     else:
         return False
+##/////////////////////////////////
+def add_content():
+
 
         
         

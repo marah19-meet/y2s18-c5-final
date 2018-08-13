@@ -9,13 +9,8 @@ from model import User, Content
 app = Flask(__name__)
 
 
-<<<<<<< HEAD
 #Session here
 #Session['username']=user_name
-=======
-# #Session here
-# Session['username']=user_name
->>>>>>> 43b4920095c1df328062575db3dc35570fd2c43b
 
 
 # App routing code here

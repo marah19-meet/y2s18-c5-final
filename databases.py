@@ -37,7 +37,7 @@ def query_by_name(their_name,their_password):
 ##/////////////////////////////////
 def add_content():
 
-
+    pass
         
         
 

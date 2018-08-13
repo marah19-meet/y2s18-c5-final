@@ -14,15 +14,21 @@ html {
 
 /* Put your styles BELOW this line */
 body {
+
+
+}
+
+#background {
     background-image: url("neighborhood.jpeg") ;
     background-repeat: no-repeat;
     background-size: cover;
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
     filter: blur(5px);
-    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
 }
 
 .pos{
@@ -65,10 +71,11 @@ body {
     width: 65px;
     background-color: transparent;
     position: relative;
-    top:20px;
-    left:30px;
-    
+}
 
+#navabarSupportedContent{
+    position: absolute;
+    right:30px;
 }
 
 

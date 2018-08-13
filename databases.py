@@ -24,13 +24,13 @@ def get_all_users():
     return users
 # Example of adding a student:
 def query_by_name(their_name,their_password):
-   
     user = session.query(
        User).first()
-    if their_name==User.user_name:
-        return True
-    elif their_password==User.password:
-        return True
+     if their_name==User.user_name and their_password==User.password:
+         return True
+    else:
+        return False
+
         
         
 

@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from sqlalchemy import Column, Integer, String, Boolean, DateTime
+from sqlalchemy import Column, Integer, String, Boolean, Date
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker
 from sqlalchemy import create_engine
@@ -22,12 +22,12 @@ class Content(Base):
     id=Column(Integer, primary_key = True)
     title=Column(String)
     op=Column(String)
-    time_of_upload=Column(DateTime, datetime.utcnow)
+    time_of_upload=Column(Date)
     text=Column(String)
     image=Column(String)
 
     def __repr__(self):
-        return "Title: {} \n Original Poster: {} \n Time of Upload: {} \n Text: {} \n Image: {}"
+        return "Title: {} \n Original Poster: {} \n Time of Upload: {} \n Text: {} \n Image: {}".format(self.title,self.op,self.time_of_upload,self.text,self.image)
 
 # Example code:
 # class Student(Base):

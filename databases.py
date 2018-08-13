@@ -39,9 +39,10 @@ def add_content(title,op,time_of_upload,text,image):
     content=Content(title=title,op=op,time_of_upload=time_of_upload,text=text,image=image)
     session.add(content)
     session.commit()
-def query_all():
 
-pass
+def query_all():
+    news=session.query(Content).all()
+    return news
 
         
         

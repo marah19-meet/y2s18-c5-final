@@ -2,9 +2,10 @@
 from flask import Flask, render_template, url_for, redirect, request, session
 
 # Add functions you need from databases.py to the next line!
-from databases import add_student, get_all_students
+from databases import add_user, get_all_users
 
-# Starting the flask app
+from model import User
+# Starting the flask 
 app = Flask(__name__)
 
 # App routing code here
@@ -12,13 +13,22 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
-@app.route('/signup')
+@app.route('/signup',methods=['GET', 'POST'])
 def signup():
-	return "This is the sign-up page"
+    if request.method == 'GET':
+        return render_template('form.html')
+    else:
+        user_name = request.form['user_name']
+        password= request.form['password']
+        save_to_database(user_name,password)
+        return render_template('from.html')
 
-@app.route('/login')
+
+	
+@app.route('/login',methods=['GET', 'POST'])
 def login():
-	return "This is the login page"
+     
+
 
 # Running the Flask app
 if __name__ == "__main__":

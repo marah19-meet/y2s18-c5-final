@@ -41,7 +41,7 @@ def add_content(title,op,time_of_upload,text,image):
     session.commit()
 def query_all():
 
-    pass
+    
         
         
 

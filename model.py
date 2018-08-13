@@ -12,7 +12,7 @@ class User(Base):
     __tablename__="User"
     id=Column(Integer, primary_key = True)
     user_name=Column(String)
-    password=Column(Integer)
+    password=Column(String)
 
     def __repr__(self):
         return("user name: {},password:{}".format(self.user_name,self.password))

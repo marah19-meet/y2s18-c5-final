@@ -16,11 +16,14 @@ def home():
 @app.route('/signup',methods=['GET', 'POST'])
 def signup():
     if request.method == 'GET':
-        return render_template('home.html')
+        print ("get method")
+        return render_template('sign-up.html')
     else:
+        print("post method 1")
         user_name = request.form['user_name']
         password= request.form['password']
         add_user(user_name,password)
+        print ("post method 2")
         return redirect (url_for("home"))
 
 

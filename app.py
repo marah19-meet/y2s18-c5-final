@@ -42,7 +42,7 @@ def login_route():
             print("Unable to initiate session")
             return render_template("login.html",message="your user name or password is wrong")
         else:
-            session['username']=user.name
+            session['username']=user.user_name
             return redirect (url_for("home"))
 
 # Running the Flask app

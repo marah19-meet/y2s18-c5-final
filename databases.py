@@ -1,7 +1,6 @@
 # Database related imports
 # Make sure to import your tables!
 from model import Base, User
-
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -26,8 +25,8 @@ def get_all_users():
 def query_by_name(their_name,their_password):
     user = session.query(
        User).first()
-     if their_name==User.user_name and their_password==User.password:
-         return True
+    if their_name==User.user_name and their_password==User.password:
+        return True
     else:
         return False
 

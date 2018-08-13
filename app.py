@@ -2,7 +2,7 @@
 from flask import Flask, render_template, url_for, redirect, request, session
 
 # Add functions you need from databases.py to the next line!
-from databases import add_user, get_all_users
+from databases import *
 
 from model import User
 # Starting the flask 
@@ -16,18 +16,31 @@ def home():
 @app.route('/signup',methods=['GET', 'POST'])
 def signup():
     if request.method == 'GET':
-        return render_template('form.html')
+        return render_template('home.html')
     else:
         user_name = request.form['user_name']
         password= request.form['password']
-        save_to_database(user_name,password)
-        return render_template('from.html')
+        add_user(user_name,password)
+        return redirect (url_for("home"))
+
 
 
 	
 @app.route('/login',methods=['GET', 'POST'])
 def login():
-     
+    if request.method== 'GET':
+        return render_template("login.html")
+    else:
+        user_name = request.form['user_name']
+        password= request.form['password']
+        
+        if query_by_name(user_name,password):
+            return redirect (url_for("home"))
+        else:
+            return render_template("login.html",message="your user name or password is wrong")
+
+
+        
 
 
 # Running the Flask app

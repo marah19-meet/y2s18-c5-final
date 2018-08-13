@@ -24,10 +24,7 @@ def get_all_users():
 
 # Example of addting a student:
 def login(their_name,their_password):
-    user = session.query(
-       User).filter_by(user_name=their_name).first()
-    print(user.password)
-    print(user.password==their_password)
+    user = session.query(User).filter_by(user_name=their_name).first()
     if user!=None and str(user.password)==their_password:
         print("True")
         return user
@@ -45,9 +42,11 @@ def query_all():
     return news
 
 def delete_content(id):
-    session.query(Content).filter_by(
-        id=id).delete
+    session.query(Content).filter_by(id=id).delete()
+    session.commit()
 
 
+        
+        
 
 

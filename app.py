@@ -9,10 +9,6 @@ from model import User, Content
 app = Flask(__name__)
 
 
-#Session here
-#Session['username']=user_name
-
-
 # App routing code here
 @app.route('/')
 def home():
@@ -35,21 +31,19 @@ def signup():
 
 	
 @app.route('/login',methods=['GET', 'POST'])
-def login():
+def login_route():
     if request.method== 'GET':
         return render_template("login.html")
     else:
         user_name = request.form['user_name']
         password= request.form['password']
-        
-        if query_by_name(user_name,password):
-            return redirect (url_for("home"))
-        else:
+        user = login(user_name, password)
+        if user == False:
+            print("Unable to initiate session")
             return render_template("login.html",message="your user name or password is wrong")
-
-
-        
-
+        else:
+            session['username']=user.name
+            return redirect (url_for("home"))
 
 # Running the Flask app
 if __name__ == "__main__":

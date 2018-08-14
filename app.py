@@ -2,12 +2,12 @@
 from flask import Flask, render_template, url_for, redirect, request, session
 
 # Add functions you need from databases.py to the next line!
-from databases import add_user, get_all_users, login, add_content, query_all
+from databases import add_user, get_all_users, login, add_content, query_all, delete_content
 
 from model import User, Content
 # Starting the flask 
 app = Flask(__name__)
-
+app.secret_key='ayyy lmao'
 
 # App routing code here
 @app.route('/')
@@ -40,10 +40,20 @@ def login_route():
         user = login(user_name, password)
         if user == False:
             print("Unable to initiate session")
-            return render_template("login.html",message="your user name or password is wrong")
+            return render_template("login.html",message="Your username or password is incorrect")
         else:
             session['username']=user.user_name
             return redirect (url_for("home"))
+
+@app.route('/news', methods=['GET','POST'])
+def news_route():
+    if request.method=='GET':
+        return render_template('news.html')
+    else:
+        title=request.form['title']
+        content=request.form['content']
+        image_url=request.form['image_url']
+
 
 # Running the Flask app
 if __name__ == "__main__":

@@ -18,7 +18,7 @@ body {
 
 }
 
-#background {
+.background {
     background-image: url("neighborhood.jpeg") ;
     background-repeat: no-repeat;
     background-size: cover;
@@ -45,12 +45,7 @@ body {
     width: 100%;
     height: 80px;
 }
-#links_topbar{
-    position: absolute;
-    right: 40px;
-    top: 40px;
-    background-color: pink;
-}
+
 .topbar{
     color:black;
     font-size: 20px;
@@ -78,4 +73,37 @@ body {
     right:30px;
 }
 
+#login_page{
+    width:200px;
+    margin-top: 20%;
+    margin-right: auto;
+    margin-left: auto;
+
+
+}
+
+
+#styling_login_page{
+
+    background-color: white;
+    border: 25px solid white;
+    padding: 10px;
+    box-shadow: 5px 10px #888888;
+    width:300px;
+    margin-top: 150px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#logo2{
+    height: 75px;
+    width: 75px;
+    background-color: transparent;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+}
 

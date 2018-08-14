@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">   
+     <head>
+        <title>BetterWays</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+ 
+ 
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="background"></div>
+        </div>
+        <div id="topbar_all">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <img src="{{ url_for('static', filename='BetterWaysLogo.png') }}" id="logo">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href=" {{ url_for('home') }} ">Home <span class="sr-only">(current)</span></a>
+                        </li>
+        
+                        </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                About
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </li>
+                        </li>
+        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href=" {{ url_for('news_route') }} " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Your Neighborhood
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li> 
+        
+                        <li class="nav-item">
+                            <a class="nav-link" href=" {{ url_for('login_route') }} ">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=" {{ url_for('signup') }} ">Signup</a>
+                    
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div id="text">
+            <h1>
+                About the BetterWays Team!
+            </h1>
+            <div id="omar">
+                <h2>Omar Dahleh</h2>
+                <ul>
+                    <li> From Jerusalem </li>
+                    <li> Backend work </li>
+                    <li> Don't even think about Tnuva </li>
+                </ul>
+            </div>
+            <div id="noam">
+                <h2>Noam Bar Ilan</h2>
+                <ul>
+                    <li> From Sarid </li>
+                    <li> Backend work </li>
+                    <li> like's singing </li>
+                </ul>
+            </div>
+            <div id="marah">
+                <h2>Marah Ali</h2>
+                <ul>
+                    <li> From  Kufor Aqab </li>
+                    <li> Front end work </li>
+                    <li> Dances ballet </li>
+                </ul>
+            </div>
+            <div id="gilad">
+                <h2>Gilad Segev</h2>
+                <ul>
+                    <li> From Alon Hagalil </li>
+                    <li> Front end work </li>
+                    <li> Like's Bamba </li>
+                </ul>
+            </div>
+            <div id="subhi">
+                <h2>Subhi Babies</h2>
+                <ul>
+                    <li> From Babies land </li>
+                    <li> Doesn't do any thing </li>
+                    <li> Like's Bamba </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <script src="{{ url_for('static', filename='jquery.js') }}"></script>
+        <script src="{{ url_for('static', filename='bootstrap.bundle.js') }}"></script>
+
+    </body>
+</html>

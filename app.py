@@ -57,6 +57,13 @@ def news_route():
         add_content(title, op, content, image_url)
         return render_template('news.html',news=query_all())
 
+@app.route('/about-team')
+def a_team():
+    return render_template('about-team.html')
+
+@app.route('/about-website')
+def a_website():
+    return render_template('about-website.html')
 
 # Running the Flask app
 if __name__ == "__main__":

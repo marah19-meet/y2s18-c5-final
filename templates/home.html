@@ -22,7 +22,7 @@
 
 
         <div class="container-fluid">
-            <div id="background"></div>
+            <div class="background"></div>
         </div>
         <div id="topbar_all">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -34,7 +34,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="/home.html">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href=" {{ url_for('home') }} ">Home <span class="sr-only">(current)</span></a>
                         </li>
         
                         </li>
@@ -52,7 +52,7 @@
                         </li>
         
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href=" {{ url_for('news_route') }} " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Your Neighborhood
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -64,10 +64,10 @@
                         </li> 
         
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Login</a>
+                            <a class="nav-link" href=" {{ url_for('login_route') }} ">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Signup</a>
+                            <a class="nav-link" href=" {{ url_for('signup') }} ">Signup</a>
                     
                     </ul>
                 </div>

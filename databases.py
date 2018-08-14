@@ -37,8 +37,8 @@ def add_content(title,op,time_of_upload,text,image):
     session.add(content)
     session.commit()
 
-def query_all():
     news=session.query(Content).all()
+def query_all():
     return news
 
 def delete_content(id):

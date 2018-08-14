@@ -3,11 +3,12 @@
 from model import Base, User,Content
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.pool import NullPool
 from datetime import datetime
 
 # You can change the name of your database, just change project.db to whatever you want (make sure to include .db at the end!)
 # Make sure you have the same name for the database in the app.py file!
-engine = create_engine('sqlite:///BetterWays.db')
+engine = create_engine('sqlite:///BetterWays.db', poolclass=NullPool)
 Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
@@ -41,6 +42,7 @@ def add_content(title,op,text,image):
    
 def query_all():
     news=session.query(Content).all()
+    news.reverse()
     return news
 
 def delete_content(id):

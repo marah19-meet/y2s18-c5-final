@@ -40,14 +40,20 @@ def login_route():
         user = login(user_name, password)
         if user == False:
             print("Unable to initiate session")
-            return render_template("login.html",message="your user name or password is wrong")
+            return render_template("login.html",message="Your username or password is incorrect")
         else:
             session['username']=user.user_name
             return redirect (url_for("home"))
 
-@app.route('/news', methods=['GET'])
+@app.route('/news', methods=['GET','POST'])
 def news_route():
-    return render_template('news.html')
+    if request.method=='GET':
+        return render_template('news.html')
+    else:
+        title=request.form['title']
+        content=request.form['content']
+        image_url=request.form['image_url']
+
 
 # Running the Flask app
 if __name__ == "__main__":

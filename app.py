@@ -58,12 +58,12 @@ def news_route():
         return render_template('news.html',news=query_all())
 
 @app.route('/about-team')
-def a-team():
-    return render_template('/about-team')
+def a_team():
+    return render_template('about-team.html')
 
 @app.route('/about-website')
-def a-website():
-    return render_template('/about-website')
+def a_website():
+    return render_template('about-website.html')
 
 # Running the Flask app
 if __name__ == "__main__":

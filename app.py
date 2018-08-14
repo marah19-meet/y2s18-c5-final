@@ -7,7 +7,7 @@ from databases import add_user, get_all_users, login, add_content, query_all
 from model import User, Content
 # Starting the flask 
 app = Flask(__name__)
-
+app.secret_key='ayyy lmao'
 
 # App routing code here
 @app.route('/')

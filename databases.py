@@ -40,10 +40,16 @@ def add_content(title,op,text,image):
     session.commit()
 
    
-def query_all():
+def query_by_news():
     news=session.query(Content).all()
     news.reverse()
     return news
+
+def query_by_arts():
+    arts=session.query(Content2).all()
+    arts.reverse()
+    return news
+
 
 def delete_content(id):
     session.query(Content).filter_by(id=id).delete()

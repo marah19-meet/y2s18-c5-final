@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from sqlalchemy import Column, Integer, String, Boolean, Date
+from sqlalchemy import Column, Integer, String, Boolean, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker
 from sqlalchemy import create_engine
@@ -22,7 +22,7 @@ class Content(Base):
     id=Column(Integer, primary_key = True)
     title=Column(String)
     op=Column(String)
-    time_of_upload=Column(Date)
+    time_of_upload=Column(DateTime)
     text=Column(String)
     image=Column(String)
 

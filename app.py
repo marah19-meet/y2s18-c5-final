@@ -53,7 +53,7 @@ def news_route():
         title=request.form['title']
         content=request.form['content']
         image_url=request.form['image_url']
-        return redirect (url_for('news_route'))
+        return render_template('news.html',content=content)
 
 
 # Running the Flask app

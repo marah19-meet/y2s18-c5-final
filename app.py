@@ -53,7 +53,9 @@ def news_route():
         title=request.form['title']
         content=request.form['content']
         image_url=request.form['image_url']
-        return render_template('news.html',content=content)
+        op = session.get('username')
+        add_content(title, op, content, image_url)
+        return render_template('news.html',news=query_all())
 
 
 # Running the Flask app

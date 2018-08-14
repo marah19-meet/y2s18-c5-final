@@ -45,12 +45,7 @@ body {
     width: 100%;
     height: 80px;
 }
-#links_topbar{
-    position: absolute;
-    right: 40px;
-    top: 40px;
-    background-color: pink;
-}
+
 .topbar{
     color:black;
     font-size: 20px;
@@ -77,5 +72,3 @@ body {
     position: absolute;
     right:30px;
 }
-
-

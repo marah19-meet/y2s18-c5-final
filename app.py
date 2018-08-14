@@ -2,7 +2,7 @@
 from flask import Flask, render_template, url_for, redirect, request, session
 
 # Add functions you need from databases.py to the next line!
-from databases import add_user, get_all_users, login, add_content, query_all
+from databases import add_user, get_all_users, login, add_content, query_all, delete_content
 
 from model import User, Content
 # Starting the flask 
@@ -44,6 +44,10 @@ def login_route():
         else:
             session['username']=user.user_name
             return redirect (url_for("home"))
+
+@app.route('/news', methods=['GET'])
+def news_route():
+    return render_template('news.html')
 
 # Running the Flask app
 if __name__ == "__main__":

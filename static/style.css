@@ -76,6 +76,7 @@ body {
     width: 75px;
     background-color: transparent;
     position: relative;
+    
 }
 
 #navbarSupportedContent{
@@ -117,6 +118,24 @@ body {
 
 .nav-item{
     -webkit-text-stroke: 1px black;
+}
+
+#text{
+    border: 1px solid gray;
+    padding: 3px;
+}
+
+h4 {
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(50, 153, 194);
+}
+
+#text_homepage{
+    text-indent: 50px;
+    text-align: justify;
+    letter-spacing: 2px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 

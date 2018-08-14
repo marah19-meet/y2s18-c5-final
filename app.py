@@ -2,7 +2,7 @@
 from flask import Flask, render_template, url_for, redirect, request, session
 
 # Add functions you need from databases.py to the next line!
-from databases import add_user, get_all_users, login, add_content, query_all, delete_content
+from databases import add_user, get_all_users, login, add_content, query_by_arts,query_by_news, delete_content, add_content2
 
 from model import User, Content
 # Starting the flask 
@@ -55,7 +55,7 @@ def news_route():
         image_url=request.form['image_url']
         op = session.get('username')
         add_content(title, op, content, image_url)
-        return render_template('news.html',news=query_all())
+        return render_template('news.html',news=query_by_news())
 
 @app.route('/about-team')
 def a_team():
@@ -64,7 +64,8 @@ def a_team():
 @app.route('/about-website')
 def a_website():
     return render_template('about-website.html')
-@app.route('/neighborhood-2')
+
+@app.route('/arts')
 def neighborhood2():
     if request.method=='GET':
         return render_template('neighborhood-2.html')
@@ -74,6 +75,9 @@ def neighborhood2():
         image_url=request.form['image_url']
         op = session.get('username')
         add_content2(title, op, content, image_url)
+        return render_template('news.html',arts=query_by_arts())
+
+
 
 # Running the Flask app
 if __name__ == "__main__":

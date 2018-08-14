@@ -49,7 +49,7 @@ def query_by_news():
     news.reverse()
     return news
 
- def query_by_arts():
+def query_by_arts():
     arts=session.query(Content2).all()
     arts.reverse()
     return news

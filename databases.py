@@ -39,6 +39,11 @@ def add_content(title,op,text,image):
     session.add(content)
     session.commit()
 
+def add_content2(title,op,text,image):
+    content2=Content2(title=title,op=op,time_of_upload=datetime.utcnow(),text=text,image=image)
+    session.add(content)
+    session.commit()
+
    
 def query_by_news():
     news=session.query(Content).all()
@@ -48,12 +53,17 @@ def query_by_news():
 def query_by_arts():
     arts=session.query(Content2).all()
     arts.reverse()
-    return news
+    return arts
 
 
 def delete_content(id):
     session.query(Content).filter_by(id=id).delete()
     session.commit()
+
+def delete_content2(id):
+    session.query(Content2).filter_by(id=id).delete()
+    session.commit()
+
 
 
         

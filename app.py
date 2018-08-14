@@ -4,7 +4,7 @@ from flask import Flask, render_template, url_for, redirect, request, session
 # Add functions you need from databases.py to the next line!
 from databases import add_user, get_all_users, login, add_content, query_by_arts,query_by_news, delete_content, add_content2
 
-from model import User, Content
+from model import User, Content,Content2
 # Starting the flask 
 app = Flask(__name__)
 app.secret_key='ayyy lmao'

@@ -64,16 +64,8 @@ def a_team():
 @app.route('/about-website')
 def a_website():
     return render_template('about-website.html')
-@app.route('/neighborhood-2')
-def neighborhood2():
-    if request.method=='GET':
-        return render_template('neighborhood-2.html')
-    else:
-        title=request.form['title']
-        content=request.form['content']
-        image_url=request.form['image_url']
-        op = session.get('username')
-        add_content2(title, op, content, image_url)
+@app.route('/neighborhood2')
+def
 
 # Running the Flask app
 if __name__ == "__main__":

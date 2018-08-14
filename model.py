@@ -30,7 +30,7 @@ class Content(Base):
         return "Title: {} \n Original Poster: {} \n Time of Upload: {} \n Text: {} \n Image: {}".format(self.title,self.op,self.time_of_upload,self.text,self.image)
 
 class Content2(Base):
-    __tablename__="Content"
+    __tablename__="Content2"
     id=Column(Integer, primary_key = True)
     title=Column(String)
     op=Column(String, nullable=False)
@@ -39,7 +39,9 @@ class Content2(Base):
     image=Column(String)
 
     def __repr__(self):
-        return "Title: {} \n Original Poster: {} \n Time of Upload: {} \n Text: {} \n Image: {}".format(self.title,self.op,self.time_of_upload,self.text,self.image)        
+        return "Title: {} \n Original Poster: {} \n Time of Upload: {} \n Text: {} \n Image: {}".format(self.title,self.op,self.time_of_upload,self.text,self.image)
+
+
 
 # Example code:
 # class Student(Base):

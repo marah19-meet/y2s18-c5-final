@@ -3,6 +3,7 @@
 from model import Base, User,Content
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from datetime import datetime
 
 # You can change the name of your database, just change project.db to whatever you want (make sure to include .db at the end!)
 # Make sure you have the same name for the database in the app.py file!
@@ -32,13 +33,14 @@ def login(their_name,their_password):
         print("False")
         return False
 ##/////////////////////////////////
-def add_content(title,op,time_of_upload,text,image):
-    content=Content(title=title,op=op,time_of_upload=time_of_upload,text=text,image=image)
+def add_content(title,op,text,image):
+    content=Content(title=title,op=op,time_of_upload=datetime.utcnow(),text=text,image=image)
     session.add(content)
     session.commit()
 
-    news=session.query(Content).all()
+   
 def query_all():
+    news=session.query(Content).all()
     return news
 
 def delete_content(id):

@@ -6,8 +6,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='neighborhood.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
  
     </head>
     <body>
@@ -50,40 +50,47 @@
                         </li>
 
         
+                        
+                        {%if 'username' not in session %}
                         <li class="nav-item">
                             <a class="nav-link" href=" {{ url_for('login_route') }} ">Login</a>
                         </li>
+                        
                         <li class="nav-item">
-                            <a class="nav-link" href=" {{ url_for('signup') }} ">Signup</a>
+                           <a class="nav-link" href=" {{ url_for('signup') }} ">Signup</a>
+                        </li>
+                        {%else%}
+                        <li class="nav-item">
+                            <a class="nav-link" href=" {{ url_for('logout') }} ">Logout</a>
+                        </li>
+                        {%endif%}
                     
                     </ul>
                 </div>
             </nav>
         </div>
         <div class="text">
-            <h1>Your Neighborhood's page!</h1>
-            <form action="/news" method="post">
-    
-                <input type="text" name="title" placeholder="title" >
-                <input type="text" name="content" placeholder="content" >
-                <input type="text"name="image_url" placeholder="place image url here">
+            <h1 id="your-neighborhoods-page">Your Neighborhood's culture and art page!</h1>
+            <form action="/arts" method="post" class="new-things">
+                <input type="text" name="title" placeholder="title" class="new-info">
+                <input type="text" name="content" placeholder="content" class="new-info">
+                <input type="text" name="image_url" placeholder="place image url here" class="new-info">
                 <input type= "submit" value="submit">
             </form>
-             
-                {%for content in news%}
-                    <div class="posts"> 
-                        <p>{{content.op}}</p>
-                        <br>
-                        <p>{{content.time_of_upload}}</p>
-                        <br>
-                        <p>{{content.title}}</p>
-                        <br>
-                        <p> {{content.text}}</p>
-                        <br>
-                        <img src="{{content.image}}">
-                        <button type="button">Delete This Post</button>
-                    </div>
-                {%endfor%}        
+            
+            {%for content2 in arts %}
+            <div class="posts"> 
+                <p class="name-of-writer">Name of writer {{content2.op}}</p>
+                <p class="date">Date {{content2.time_of_upload}}</p>
+                <p class="news-titles">{{content2.title}}</p>
+                <p class="news-content">{{content2.text}}</p>
+                <img src="{{content2.image}}" class="img">
+                <form action="/news/delete/{{content2.id}}" method="post" class="delete-botton">
+                    <input type="submit" value="Delete This Post">
+                </form>
+                <br>
+            </div>
+            {%endfor%}        
         </div>
 
         <script src="{{ url_for('static', filename='jquery.js') }}"></script>

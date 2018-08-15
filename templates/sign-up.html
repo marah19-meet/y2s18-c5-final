@@ -12,62 +12,64 @@
     <body>
         <div class="background"></div>
         <div class="topbar_all">
-                <nav class="navbar navbar-expand-lg navbar-light">
-                    <img src="{{ url_for('static', filename='BetterWaysLogo.png') }}" id="logo">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-            
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href=" {{ url_for('home') }} ">Home <span class="sr-only">(current)</span></a>
-                            </li>
-            
-                            <li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    About
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{url_for('a_team')}}">About the Team</a>
-                                        <a class="dropdown-item" href="{{url_for('a_website')}}">About the Website</a>
-                                    </div>
-                                </li>
-                            </li>
-            
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <img src="{{ url_for('static', filename='BetterWaysLogo.png') }}" id="logo">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href=" {{ url_for('home') }} ">Home <span class="sr-only">(current)</span></a>
+                        </li>
+        
+                        <li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href=" {{ url_for('news_route') }} " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Your Neighborhood
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                About
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{url_for('news_route')}}">News</a>
-                                    <a class="dropdown-item" href="{{url_for('neighborhood2')}}">Culture</a>
+                                    <a class="dropdown-item" href="{{url_for('a_team')}}">About the Team</a>
+                                    <a class="dropdown-item" href="{{url_for('a_website')}}">About the Website</a>
                                 </div>
                             </li>
+                        </li>
+        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href=" {{ url_for('news_route') }} " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Your Neighborhood
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{url_for('news_route')}}">News</a>
+                                <a class="dropdown-item" href="{{url_for('neighborhood2')}}">Culture</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=" {{ url_for('login_route') }} ">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=" {{ url_for('signup') }} ">Signup</a>
+                    
+                    </ul>
+                </div>
+            </nav>
+        </div>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href=" {{ url_for('login_route') }} ">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href=" {{ url_for('signup') }} ">Signup</a>
-                        
-                        </ul>
-                    </div>
-                </nav>
-            </div>
+        <h1 id="signup-title">Signup</h1>
+
         <div id="styling_login_page">
             <img src="{{ url_for('static', filename='BetterWaysLogo.png') }} " id="logo2">
             <div id="login_page">
-            <form action="/signup" method="post">
-                <input type="text" name="user_name" placeholder="User Name">
-                <br>
-                <br>
-                <input type="password" name="password" placeholder="Password">
-                <br>
-                <br>
-                <input type="submit" value="Sign-up" >
-            </form>
+                <form action="/signup" method="post">
+                    <input type="text" name="user_name" placeholder="User Name">
+                    <br>
+                    <br>
+                    <input type="password" name="password" placeholder="Password">
+                    <br>
+                    <br>
+                    <input type="submit" value="Sign-up" >
+                </form>
             </div>
         </div>
         <script src="{{ url_for('static', filename='jquery.js') }}"></script>

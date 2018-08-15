@@ -28,6 +28,8 @@ def signup():
         return redirect (url_for("home"))
 
 
+
+	
 @app.route('/login',methods=['GET', 'POST'])
 def login_route():
     if request.method== 'GET':
@@ -43,7 +45,6 @@ def login_route():
             session['username']=user.user_name
             return redirect (url_for("home"))
 
-
 @app.route('/news', methods=['GET','POST'])
 def news_route():
     if request.method=='GET':
@@ -56,18 +57,15 @@ def news_route():
         add_content(title, op, content, image_url)
         return render_template('news.html',news=query_by_news())
 
-
 @app.route('/about-team')
 def a_team():
     return render_template('about-team.html')
-
 
 @app.route('/about-website')
 def a_website():
     return render_template('about-website.html')
 
-
-@app.route('/arts')
+@app.route('/arts', methods=['GET','POST'])
 def neighborhood2():
     if request.method=='GET':
         return render_template('neighborhood-2.html')
@@ -78,31 +76,13 @@ def neighborhood2():
         op = session.get('username')
         add_content2(title, op, content, image_url)
         return render_template('news.html',arts=query_by_arts())
-
-
-@app.route('/delete/', methods=['POST'])
-def delete_art():
-    if request.method=='GET':
-        return render_template('neighborhood-2.html')
-    else:
-        id=request.form['id']
-        delete_content2(id)
-        return render_template('neighborhood-2.html')
-
-
-@app.route('/news', methods='GET,POST')
-def delete_news():
-    if request.method=='GET':
-        return render_template('news.html')
-    else:
-        id=request.form['id']
-        delete_content(id)
-        return render_template('news.html')
+@app.route('/logout', methods=['GET'])
+def logout():
+    del sesssion['username']
+    return redirect (url_for("home"))
 
 
 
 # Running the Flask app
 if __name__ == "__main__":
     app.run(debug=True)
-
-

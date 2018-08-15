@@ -46,13 +46,17 @@
                         </div>
                     </li>
 
-                    {%if session['username']%}
+                    {%if 'username' not in session %}
                     <li class="nav-item">
                         <a class="nav-link" href=" {{ url_for('login_route') }} ">Login</a>
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link" href=" {{ url_for('signup') }} ">Signup</a>
+                       <a class="nav-link" href=" {{ url_for('signup') }} ">Signup</a>
+                    </li>
+                    {%else%}
+                    <li class="nav-item">
+                        <a class="nav-link" href=" {{ url_for('logout') }} ">Logout</a>
                     </li>
                     {%endif%}
                     

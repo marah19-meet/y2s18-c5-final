@@ -46,7 +46,7 @@
                         </div>
                     </li>
 
-                    
+                    {%if session['username']%}
                     <li class="nav-item">
                         <a class="nav-link" href=" {{ url_for('login_route') }} ">Login</a>
                     </li>
@@ -54,6 +54,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href=" {{ url_for('signup') }} ">Signup</a>
                     </li>
+                    {%endif%}
                     
                 </ul>
             </div>

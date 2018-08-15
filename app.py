@@ -78,7 +78,7 @@ def neighborhood2():
         return render_template('news.html',arts=query_by_arts())
 @app.route('/logout', methods=['GET'])
 def logout():
-    del sesssion['username']
+    del session['username']
     return redirect (url_for("home"))
 
 

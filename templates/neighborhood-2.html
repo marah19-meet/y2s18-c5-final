@@ -72,16 +72,19 @@
              
                 {%for content in news%}
                     <div class="posts"> 
-                        <p>{{content.op}}</p>
+                        <p>{{content2.op}}</p>
                         <br>
-                        <p>{{content.time_of_upload}}</p>
+                        <p>{{content2.time_of_upload}}</p>
                         <br>
-                        <p>{{content.title}}</p>
+                        <p>{{content2.title}}</p>
                         <br>
-                        <p> {{content.text}}</p>
+                        <p> {{content2.text}}</p>
                         <br>
-                        <img src="{{content.image}}">
-                        <button type="button">Delete This Post</button>
+                        <img src="{{content2.image}}">
+                        <form action="/arts" method="post"></form>
+                        <form action="/news/delete/{{content.id}}" method="post">
+                            <input type="submit"value="Delete This Post">
+                        </form>    
                     </div>
                 {%endfor%}        
         </div>

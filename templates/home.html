@@ -11,6 +11,7 @@
         
     </head>
     <body> 
+
         <div class="topbar_all">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <img src="{{ url_for('static', filename='BetterWaysLogo.png') }}" id="logo">
@@ -77,49 +78,13 @@
                 </div>
             </div>
         </div>
+ 
 
-        <div class="caption">
-            <span class="text" id='str'>Welcome to your neighborhood, {{session['username']}}</span>
-            <span class="type-cursor">|</span>
-        <script type=text/javascript>
-        var pos=0
-        var speed=250
-        var str=document.getElementById('str').innertext;
-        document.getElementById('str').innertext='';
-
-        function type(){
-            if (pos<str.length) {
-                document.getElementById('str').innertext += str.charAt(pos);
-                pos++;
-                setTimeout(type,speed);
-            }else{
-                setTimeout(erase, speed)
-
-
-            }
-        }
-        setTimeout(type,speed)
-        function erase(){
-            if (pos>=str.length){
-                var temp= str.substring(0,pos);
-                document.getElementById('str').innertext=temp;
-                pos--;
-                setTimeout(erase speed);
-
-
-
-            }else{
-                setTimeout(type,speed);
-            }
-
-
-        }
-    setTimeout(type,speed)
-
-
-
-
-        </script>
+<h1>
+  <a href="" class="typewrite" data-period="2000" data-type='[ "Hi, Im Si.", "I am Creative.", "I Love Design.", "I Love to Develop." ]'>
+    <span class="wrap"></span>
+  </a>
+</h1>
         <div id="text">
             <p>
                 <h4>Welcome to Betterways -----> your neighborhood's websit!</h4>
@@ -133,6 +98,6 @@
         
         <script src="{{ url_for('static', filename='jquery.js') }}"></script>
         <script src="{{ url_for('static', filename='bootstrap.bundle.js') }}"></script>
-        
+        <script src="{{ url_for('static', filename='inter.js') }}"></script>
     </body>
 </html>

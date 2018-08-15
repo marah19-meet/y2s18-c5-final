@@ -1,6 +1,6 @@
 # Database related imports
 # Make sure to import your tables!
-from model import Base, User,Content
+from model import Base, User,Content,Content2
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import NullPool
@@ -41,7 +41,7 @@ def add_content(title,op,text,image):
 
 def add_content2(title,op,text,image):
     content2=Content2(title=title,op=op,time_of_upload=datetime.utcnow(),text=text,image=image)
-    session.add(content)
+    session.add(content2)
     session.commit()
 
    

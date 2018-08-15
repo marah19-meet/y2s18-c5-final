@@ -1,92 +1,95 @@
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">   
-     <head>
-        <title>BetterWays</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
- 
- 
-    </head>
-    <body>
-        <div class="container-fluid">
-            <div class="background"></div>
-        </div>
-        <div id="topbar_all">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <img src="{{ url_for('static', filename='BetterWaysLogo.png') }}" id="logo">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-        
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href=" {{ url_for('home') }} ">Home <span class="sr-only">(current)</span></a>
-                        </li>
-        
-                        <li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                About
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{url_for('a_team')}}">About the Team</a>
-                                    <a class="dropdown-item" href="{{url_for('a_website')}}">About the Website</a>
-                                </div>
-                            </li>
-                        </li>
-        
+<head>
+    <title>BetterWays</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='news.css') }}">
+    
+    
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="background"></div>
+    </div>
+    <div class="topbar_all">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <img src="{{ url_for('static', filename='BetterWaysLogo.png') }}" id="logo">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href=" {{ url_for('home') }} ">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    
+                    <li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href=" {{ url_for('news_route') }} " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Your Neighborhood
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                About
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{url_for('news_route')}}">News</a>
-                                <a class="dropdown-item" href="{{url_for('neighborhood2')}}">Culture</a>
+                                <a class="dropdown-item" href="{{url_for('a_team')}}">About the Team</a>
+                                <a class="dropdown-item" href="{{url_for('a_website')}}">About the Website</a>
                             </div>
                         </li>
-
-        
-                        <li class="nav-item">
-                            <a class="nav-link" href=" {{ url_for('login_route') }} ">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href=" {{ url_for('signup') }} ">Signup</a>
+                    </li>
                     
-                    </ul>
-                </div>
-            </nav>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href=" {{ url_for('news_route') }} " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Your Neighborhood
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{url_for('news_route')}}">News</a>
+                            <a class="dropdown-item" href="{{url_for('neighborhood2')}}">Culture</a>
+                        </div>
+                    </li>
+                    
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href=" {{ url_for('login_route') }} ">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=" {{ url_for('signup') }} ">Signup</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="text">
+        <h1>Your Neighborhood's page!</h1>
+        <form action="/news" method="post">
+            
+            <input type="text" name="title" placeholder="title" >
+            <input type="text" name="content" placeholder="content" >
+            <input type="text"name="image_url" placeholder="place image url here">
+            <input type= "submit" value="submit">
+        </form>
+        
+        {%for content in news%}
+        <div class="posts"> 
+            <p>{{content.op}}</p>
+            <br>
+            <p>{{content.time_of_upload}}</p>
+            <br>
+            <p>{{content.title}}</p>
+            <br>
+            <p> {{content.text}}</p>
+            <br>
+            <img src="{{content.image}}">
+            <button type="button">Delete This Post</button>
         </div>
-        <div id="text">
-            <h1>Your Neighborhood's page!</h1>
-            <form action="/news" method="post">
+        {%endfor%}        
+    </div>
     
-                <input type="text" name="title" placeholder="title" >
-                <input type="text" name="content" placeholder="content" >
-                <input type="text"name="image_url" placeholder="place image url here">
-                <input type= "submit" value="submit">
-            </form>
-             
-                {%for content in news%}
-                    <div class="posts"> 
-                        <p>{{content.op}}</p>
-                        <br>
-                        <p>{{content.time_of_upload}}</p>
-                        <br>
-                        <p>{{content.title}}</p>
-                        <br>
-                        <p> {{content.text}}</p>
-                        <br>
-                        <img src="{{content.image}}">
-                        <button type="button">Delete This Post</button>
-                    </div>
-                {%endfor%}        
-        </div>
-
-        <script src="{{ url_for('static', filename='jquery.js') }}"></script>
-        <script src="{{ url_for('static', filename='bootstrap.bundle.js') }}"></script>
-
-    </body>
+    <script src="{{ url_for('static', filename='jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap.bundle.js') }}"></script>
+    
+</body>
 </html>

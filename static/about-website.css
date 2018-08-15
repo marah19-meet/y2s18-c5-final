@@ -147,6 +147,8 @@ body {
 
 h3{
     color:#56a0ddef;
+    text-align: initial;
+    text-transform: initial;
 }
 h2, p {
     color: white;

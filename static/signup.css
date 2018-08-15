@@ -13,3 +13,9 @@
 .topbar_all {
     background-color: rgba(143,170,168,0.7);
 }
+.login-title{
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(50, 153, 194);
+    margin-top:90px;
+}

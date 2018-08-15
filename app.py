@@ -51,28 +51,37 @@ def news_route():
         return render_template('news.html',news=query_by_news())
     else:
         
-        title=request.form['title']
-        content=request.form['content']
-        image_url=request.form['image_url']
-        op = session.get('username')
-        add_content(title, op, content, image_url)
-        
-        return render_template('news.html',news=query_by_news())        
+        if 'username' in session:
+            title=request.form['title']
+            content=request.form['content']
+            image_url=request.form['image_url']
+            op = session.get('username')
+            add_content(title, op, content, image_url)
+            return render_template('news.html',news=query_by_news())
+
+        else:
+            print('You are not logged in')
+            return redirect (url_for("home"))
 
 @app.route('/news/delete/<content_id>', methods=['POST'])
 def delete_news_content(content_id):
     
-
-    delete_content(content_id)
-    return redirect(url_for('news_route'))
+    if 'username' in session:
+        delete_content(content_id)
+        return redirect(url_for('news_route'))
+    else:
+        return redirect (url_for("home"))
 
 
 @app.route('/arts/delete/<content_id>', methods=['POST'])
 def delete_arts_content(content2_id):
-    
-    delete_content2(content2_id)
-    
-    return redirect(url_for('arts_route'))
+    if 'username' in session:
+        delete_content2(content2_id)
+        
+        return redirect(url_for('arts_route'))
+    else:
+        return redirect (url_for("home"))
+
 
 
 @app.route('/about-team')

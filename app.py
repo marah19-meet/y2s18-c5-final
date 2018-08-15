@@ -1,5 +1,6 @@
 # Flask-related imports
-from flask import Flask, render_template, url_for, redirect, request, session
+from flask import Flask, render_template, url_for, redirect, request
+from flask import session as login_session
 
 # Add functions you need from databases.py to the next line!
 from databases import add_user, get_all_users, login, add_content, query_by_arts,query_by_news, delete_content, delete_content2 ,add_content2
@@ -42,8 +43,10 @@ def login_route():
             print("Unable to initiate session")
             return render_template("login.html",message="Your username or password is incorrect")
         else:
-            session['username']=user.user_name
+            login_session['username']=user.user_name
             return redirect (url_for("home"))
+
+
 
 @app.route('/news', methods=['GET','POST'])
 def news_route():
@@ -51,11 +54,11 @@ def news_route():
         return render_template('news.html',news=query_by_news())
     else:
         
-        if 'username' in session:
+        if 'username' in login_session:
             title=request.form['title']
             content=request.form['content']
             image_url=request.form['image_url']
-            op = session.get('username')
+            op = login_session.get('username')
             add_content(title, op, content, image_url)
             return render_template('news.html',news=query_by_news())
 
@@ -63,22 +66,14 @@ def news_route():
             print('You are not logged in')
             return redirect (url_for("home"))
 
+
+
 @app.route('/news/delete/<content_id>', methods=['POST'])
 def delete_news_content(content_id):
     
-    if 'username' in session:
+    if 'username' in login_session:
         delete_content(content_id)
         return redirect(url_for('news_route'))
-    else:
-        return redirect (url_for("home"))
-
-
-@app.route('/arts/delete/<content_id>', methods=['POST'])
-def delete_arts_content(content2_id):
-    if 'username' in session:
-        delete_content2(content2_id)
-        
-        return redirect(url_for('arts_route'))
     else:
         return redirect (url_for("home"))
 
@@ -93,22 +88,34 @@ def a_website():
     return render_template('about-website.html')
 
 @app.route('/arts', methods=['GET','POST'])
-def neighborhood2():
+def arts_route():
     if request.method=='GET':
         return render_template('neighborhood-2.html',arts=query_by_arts())
     else: 
         title=request.form['title']
         content=request.form['content']
         image_url=request.form['image_url']
-        op = session.get('username')
+        op = login_session.get('username')
         add_content2(title, op, content, image_url)
         return render_template('news.html',arts=query_by_arts())
+    
+@app.route('/arts/delete/<content2_id>', methods=['POST'])
+def delete_arts_content(content2_id):
+    if 'username' in login_session:
+        delete_content2(content2_id)
+        
+        return redirect(url_for('arts_route'))
+    else:
+        return redirect (url_for("home"))
+        
+
+
         
         
 
 @app.route('/logout', methods=['GET'])
 def logout():
-    del session['username']
+    del login_session['username']
     return redirect (url_for("home"))
 
 

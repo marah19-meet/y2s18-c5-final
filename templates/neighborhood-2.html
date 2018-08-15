@@ -45,7 +45,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{url_for('news_route')}}">News</a>
-                                <a class="dropdown-item" href="{{url_for('neighborhood2')}}">Culture</a>
+                                <a class="dropdown-item" href="{{url_for('arts_route')}}">Culture</a>
                             </div>
                         </li>
 
@@ -71,7 +71,7 @@
         </div>
         <div class="text">
             <h1 id="your-neighborhoods-page">Your Neighborhood's culture and art page!</h1>
-            <form action="/news" method="post" class="new-things">
+            <form action="/arts" method="post" class="new-things">
                 <input type="text" name="title" placeholder="title" class="new-info">
                 <input type="text" name="content" placeholder="content" class="new-info">
                 <input type="text" name="image_url" placeholder="place image url here" class="new-info">
@@ -84,8 +84,8 @@
                 <p class="date">Date {{content2.time_of_upload}}</p>
                 <p class="news-titles">{{content2.title}}</p>
                 <p class="news-content">{{content2.text}}</p>
-                <img src="{{content.image}}" class="img">
-                <form action="/news/delete/{{content.id}}" method="post" class="delete-botton">
+                <img src="{{content2.image}}" class="img">
+                <form action="/arts/delete/{{content2.id}}" method="post" class="delete-botton">
                     <input type="submit" value="Delete This Post">
                 </form>
                 <br>

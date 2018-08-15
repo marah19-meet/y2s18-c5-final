@@ -101,10 +101,11 @@ body {
     
     background-color: white;
     border: 25px solid white;
+    border-radius:25px;
     padding: 10px;
     box-shadow: 5px 10px #888888;
     width:300px;
-    margin-top: 150px;
+    margin-top: 50px;
     margin-right: auto;
     margin-left: auto;
 }

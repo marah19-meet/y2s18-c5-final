@@ -45,7 +45,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{url_for('news_route')}}">News</a>
-                                <a class="dropdown-item" href="{{url_for('neighborhood2')}}">Culture</a>
+                                <a class="dropdown-item" href="{{url_for('arts_route')}}">Culture</a>
                             </div>
                         </li>
 
@@ -64,43 +64,44 @@
             <h1>
                 About the BetterWays Team!
             </h1>
-            <div id="omar">
+            <img src="{{ url_for('static', filename='omar.png') }}" id="omar">
+            <img src="{{ url_for('static', filename='noam.jpg') }}" id="noam">
+            <img src="{{ url_for('static', filename='gilad.JPG') }}" id="gilad">
+            <img src="{{ url_for('static', filename='marah.jpg') }}" id="marah">
+
+            <div class="omar">
                 <h2>Omar Dahleh</h2>
+                <br>
                 <ul>
                     <li> From Jerusalem </li>
                     <li> Backend work </li>
-                    <li> Don't even think about Tnuva </li>
+                    <li> Don't think about Tnuva </li>
                 </ul>
             </div>
-            <div id="noam">
+            <div class="noam">
                 <h2>Noam Bar Ilan</h2>
+                <br>
                 <ul>
                     <li> From Sarid </li>
                     <li> Backend work </li>
                     <li> like's singing </li>
                 </ul>
             </div>
-            <div id="marah">
+            <div class="marah">
                 <h2>Marah Ali</h2>
+                <br>
                 <ul>
                     <li> From  Kufor Aqab </li>
                     <li> Front end work </li>
                     <li> Dances ballet </li>
                 </ul>
             </div>
-            <div id="gilad">
+            <div class="gilad">
                 <h2>Gilad Segev</h2>
+                <br>
                 <ul>
                     <li> From Alon Hagalil </li>
                     <li> Front end work </li>
-                    <li> Like's Bamba </li>
-                </ul>
-            </div>
-            <div id="subhi">
-                <h2>Subhi Babies</h2>
-                <ul>
-                    <li> From Babies land </li>
-                    <li> Doesn't do any thing </li>
                     <li> Like's Bamba </li>
                 </ul>
             </div>

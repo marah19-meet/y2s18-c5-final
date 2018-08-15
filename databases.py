@@ -2,7 +2,7 @@
 # Make sure to import your tables!
 from model import Base, User,Content,Content2
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy.pool import NullPool
 from datetime import datetime
 
@@ -11,7 +11,7 @@ from datetime import datetime
 engine = create_engine('sqlite:///BetterWays.db', poolclass=NullPool)
 Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
-session = DBSession()
+session = scoped_session(DBSession)
 
 # Your database functions are located under here (querying, adding items, etc.)
 def add_user(user_name,password):

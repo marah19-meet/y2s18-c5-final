@@ -77,6 +77,49 @@
                 </div>
             </div>
         </div>
+
+        <div class="caption">
+            <span class="text" id='str'>Welcome to your neighborhood, {{session['username']}}</span>
+            <span class="type-cursor">|</span>
+        <script type=text/javascript>
+        var pos=0
+        var speed=250
+        var str=document.getElementById('str').innertext;
+        document.getElementById('str').innertext='';
+
+        function type(){
+            if (pos<str.length) {
+                document.getElementById('str').innertext += str.charAt(pos);
+                pos++;
+                setTimeout(type,speed);
+            }else{
+                setTimeout(erase, speed)
+
+
+            }
+        }
+        setTimeout(type,speed)
+        function erase(){
+            if (pos>=str.length){
+                var temp= str.substring(0,pos);
+                document.getElementById('str').innertext=temp;
+                pos--;
+                setTimeout(erase speed);
+
+
+
+            }else{
+                setTimeout(type,speed);
+            }
+
+
+        }
+    setTimeout(type,speed)
+
+
+
+
+        </script>
         <div id="text">
             <p>
                 <h4>Welcome to Betterways -----> your neighborhood's websit!</h4>

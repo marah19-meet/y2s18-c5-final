@@ -50,12 +50,13 @@ def news_route():
     if request.method=='GET':
         return render_template('news.html')
     else:
-        title=request.form['title']
-        content=request.form['content']
-        image_url=request.form['image_url']
-        op = session.get('username')
-        add_content(title, op, content, image_url)
-        return render_template('news.html',news=query_by_news())
+        if username in session:
+            title=request.form['title']
+            content=request.form['content']
+            image_url=request.form['image_url']
+            op = session.get('username')
+            add_content(title, op, content, image_url)
+            return render_template('news.html',news=query_by_news())
 
 @app.route('/about-team')
 def a_team():

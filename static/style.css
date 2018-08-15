@@ -128,12 +128,14 @@ body {
     padding: 3px;
 }
 
-h4 {
+h3 {
     text-align: center;
     text-transform: uppercase;
     color: rgb(50, 153, 194);
 }
-
+#home-content{
+    text-align: center;
+}
 
 #text_homepage{
     text-indent: 50px;

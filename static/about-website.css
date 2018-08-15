@@ -144,3 +144,16 @@ body {
 #finito{
     padding-top:335px;
 }
+
+h3{
+    color:#56a0ddef;
+    text-align: initial;
+    text-transform: initial;
+}
+h2, p {
+    color: white;
+}
+
+#overview{
+    padding-left: 50px;
+}

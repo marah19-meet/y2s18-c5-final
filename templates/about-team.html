@@ -5,8 +5,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='about-team.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
  
     </head>
     <body>
@@ -64,46 +64,54 @@
             <h1>
                 About the BetterWays Team!
             </h1>
-            <img src="{{ url_for('static', filename='omar.png') }}" id="omar">
-            <img src="{{ url_for('static', filename='noam.jpg') }}" id="noam">
-            <img src="{{ url_for('static', filename='gilad.JPG') }}" id="gilad">
-            <img src="{{ url_for('static', filename='marah.jpg') }}" id="marah">
-
-            <div class="omar">
-                <h2>Omar Dahleh</h2>
-                <br>
-                <ul>
-                    <li> From Jerusalem </li>
-                    <li> Backend work </li>
-                    <li> Don't think about Tnuva </li>
-                </ul>
+            <div id="aboutmarah">
+                <img src="{{ url_for('static', filename='marah.jpg') }}" id="marah">
+                
+                <div id="marahinfo">
+                    <h2>Marah Ali</h2>
+                    <br>
+                    <ul>
+                        <li> From  Kufor Aqab </li>
+                        <li> Front end work </li>
+                        <li> Dances ballet </li>
+                    </ul>
+                </div>
             </div>
-            <div class="noam">
-                <h2>Noam Bar Ilan</h2>
-                <br>
-                <ul>
-                    <li> From Sarid </li>
-                    <li> Backend work </li>
-                    <li> like's singing </li>
-                </ul>
+            <div id="aboutomar">
+                <img src="{{ url_for('static', filename='omar.png') }}" id="omar">
+                <div id="omarinfo">
+                    <h2>Omar Dahleh</h2>
+                    <br>
+                    <ul>
+                        <li> From Jerusalem </li>
+                        <li> Backend work </li>
+                        <li> Don't think about Tnuva </li>
+                    </ul>
+                </div>
             </div>
-            <div class="marah">
-                <h2>Marah Ali</h2>
-                <br>
-                <ul>
-                    <li> From  Kufor Aqab </li>
-                    <li> Front end work </li>
-                    <li> Dances ballet </li>
-                </ul>
+            <div id="aboutnoam">
+                <img src="{{ url_for('static', filename='noam.jpg') }}" id="noam">
+                <div id="noaminfo">
+                    <h2>Noam Bar Ilan</h2>
+                    <br>
+                    <ul>
+                        <li> From Sarid </li>
+                        <li> Backend work </li>
+                        <li> like's singing </li>
+                    </ul>
+                </div>
             </div>
-            <div class="gilad">
-                <h2>Gilad Segev</h2>
-                <br>
-                <ul>
-                    <li> From Alon Hagalil </li>
-                    <li> Front end work </li>
-                    <li> Like's Bamba </li>
-                </ul>
+            <div id="aboutgilad">
+                <img src="{{ url_for('static', filename='gilad.JPG') }}" id="gilad">
+                <div id="giladinfo">
+                    <h2>Gilad Segev</h2>
+                    <br>
+                    <ul>
+                        <li> From Alon Hagalil </li>
+                        <li> Front end work </li>
+                        <li> Like's Bamba </li>
+                    </ul>
+                </div>
             </div>
         </div>
 

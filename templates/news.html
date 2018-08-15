@@ -72,7 +72,7 @@
             <input type= "submit" value="submit">
         </form>
         
-        {%for content in news%}
+        {%for content in news %}
         <div class="posts"> 
             <p>{{content.op}}</p>
             <br>
@@ -83,7 +83,9 @@
             <p> {{content.text}}</p>
             <br>
             <img src="{{content.image}}">
-            <button type="button">Delete This Post</button>
+            <form action="/news/delete/{{content.id}}" method="post">
+                <input type="submit" value="Delete This Post">
+            </form>
         </div>
         {%endfor%}        
     </div>

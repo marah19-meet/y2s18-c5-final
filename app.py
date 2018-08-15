@@ -80,7 +80,7 @@ def neighborhood2():
         return render_template('news.html',arts=query_by_arts())
 
 
-@app.route('/arts', methods='GET,POST')
+@app.route('/delete/', methods=['POST'])
 def delete_art():
     if request.method=='GET':
         return render_template('neighborhood-2.html')
@@ -104,3 +104,5 @@ def delete_news():
 # Running the Flask app
 if __name__ == "__main__":
     app.run(debug=True)
+
+

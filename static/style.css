@@ -127,11 +127,25 @@ body {
     border: 1px solid gray;
     padding: 3px;
 }
+#better
+{
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(4, 81, 112);
+}
+#ways
+{
+    text-align: center;
+    color: rgb(13, 77, 129);
+    font-family: "Arial, Helvetica, sans-serif";
+    
+}
 
 h4 {
     text-align: center;
-    text-transform: uppercase;
     color: rgb(50, 153, 194);
+    font-family: "Bodoni MT"
+    
 }
 
 

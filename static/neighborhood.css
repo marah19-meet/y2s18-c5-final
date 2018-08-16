@@ -21,7 +21,7 @@
     background-color: white;
     width: 50%;
     position: relative;
-    left: 150px;
+    left: 250px;
     margin: 50px;
     border: solid;
     border-width: 7px;
@@ -51,7 +51,7 @@
 .new-things{
     background-color: white;
     position: relative;
-    left: 50px;
+    left: 250px;
     width: 820px;
     border:solid;
     border-width: 3px;
